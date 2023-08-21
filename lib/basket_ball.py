@@ -197,3 +197,9 @@ def player_age(player_name):
         for player in team["players"]:
             if player['name'] == player_name :
                 return player["name"] + "Age:" + str(player['age'])
+            
+def team_colors(team_name):
+    game_data=game_dict()
+    for team in game_data.values():
+        if team["team_name"] == team_name:
+            return team["colors"]
