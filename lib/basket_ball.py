@@ -203,3 +203,11 @@ def team_colors(team_name):
     for team in game_data.values():
         if team["team_name"] == team_name:
             return team["colors"]
+        
+def team_names():
+    game_data = game_dict()
+    # home_team_name = game_data["home"]["team_name"]
+    # away_team_name = game_data["away"]["team_name"]
+    #return [home_team_name, away_team_name]
+    return [game_data["home"]["team_name"], game_data["away"]["team_name"]]
+    
