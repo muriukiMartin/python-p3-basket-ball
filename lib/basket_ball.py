@@ -216,3 +216,23 @@ def player_numbers(team_name):
     for team in game_data.values():
         if (team["team_name"]) == team_name:
             return [player["number"] for player in team["players"]]
+        
+def player_stats(player_name):
+    game_data = game_dict()
+    for team in game_data.values():
+        for player in team["players"]:
+            if player['name'] == player_name:
+                return {
+                    "Name": player["name"],
+                    "number": player["number"],
+                    "position": player["position"],
+                    "points_per_game": player["points_per_game"],
+                    "rebounds_per_game": player["rebounds_per_game"],
+                    "assists_per_game": player["assists_per_game"],
+                    "steals_per_game": player["steals_per_game"],
+                    "blocks_per_game": player["blocks_per_game"],
+                    "career_points": player["career_points"],
+                    "age": player["age"],
+                    "height_inches": player["height_inches"],
+                    "shoe_brand": player["shoe_brand"]
+                    }
