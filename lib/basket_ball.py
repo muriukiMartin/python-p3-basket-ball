@@ -210,4 +210,9 @@ def team_names():
     # away_team_name = game_data["away"]["team_name"]
     #return [home_team_name, away_team_name]
     return [game_data["home"]["team_name"], game_data["away"]["team_name"]]
-    
+
+def player_numbers(team_name):
+    game_data = game_dict()
+    for team in game_data.values():
+        if (team["team_name"]) == team_name:
+            return [player["number"] for player in team["players"]]
