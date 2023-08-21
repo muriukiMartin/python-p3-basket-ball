@@ -190,3 +190,10 @@ def num_points_per_game(player_name):
             if player['name'] == player_name: #condition to match player name is in players
                 return player_name + "Points per game:" + str(player["points_per_game"]) #return the points per game
     return None
+
+def player_age(player_name):
+    game_data = game_dict()
+    for team in game_data.values():
+        for player in team["players"]:
+            if player['name'] == player_name :
+                return player["name"] + "Age:" + str(player['age'])
